@@ -8,7 +8,9 @@
 <?php if (!isset($_GET["plain"])) : ?>
 <!DOCTYPE html>
 <html>
-<head><title>MINECRAFT DRAMA GENERATOR</title>
+<head><title>Генератор Майнкрафт Драмы</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />  
+<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
 <style type="text/css">
 h6 {
 	text-align: center;
@@ -29,128 +31,116 @@ h1 {
 	font-family: sans-serif;
 }
 </style>
+<script src="/js/jquery-latest.js"></script>
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.0/html2canvas.js"></script>
+<script>
+        $(function () {
+            $("#menu").load("../menu.html");
+        });
+</script>
 </head>
 <body>
-<h3>The Minecraft Drama Generator</h3>
+<div id="menu"></div>
+<div id="dramaa"><h3>Генератор Майнкрафт Драмы</h3>
 <h1><?php endif; ?>
 <?php
 $combinations = array(
-	"people" => array("Player", "jadedcat", "Alblaka", "Greg", "Eloraam", "AUTOMATIC_MAIDEN", "Alz454", "RS485", "Shukaro", "Toops", "CovertJaguar", "Pahimar", "Sengir", "Azanor", "jeb", "Greymerk", "Dinnerbone", "Grum", "dan200", "Cloudy", "KingLemming", "Zeldo", "AlgorithmX2", "Mikee", "Eyamaz", "kakermix", "cpw", "LexManos", "Vswe", "Direwolf20", "Calclavia", "Reika", "Sangar", "skyboy", "FlowerChild", "SpaceToad", "ChickenBones", "Notch", "Pokefenn", "Shadowclaimer", "Vazkii", "pixlepix", "nekosune", "copygirl", "immibis", "RichardG", "JAKJ", "mDiyo", "pillbox", "progwml6", "PowerCrystals", "GUIpsp", "nallar", "Soaryn", "Soaryn", "AbrarSyed", "Sunstrike", "BevoLJ", "asie", "tterrag", "CrazyPants", "Aidan", "Binnie", "Mojang", "ProfMobius", "peterix", "RWTema", "Slowpoke", "Curse", "bspkrs", "Mr_okushama", "Searge", "iChun", "Krapht", "Erasmus_Crowley", "MysteriousAges", "Drullkus", "Micdoodle8","GenPage","Hunterz","tgame14", "Velotican", "kirindave", "MachineMuse", "M3gaFr3ak", "Lunatrius", "wha-ha-ha"),
+	"people" => array("Player", "jadedcat", "Alblaka", "Greg", "Eloraam", "AUTOMATIC_MAIDEN", "Alz454", "RS485", "Shukaro", "Toops", "CovertJaguar", "Pahimar", "Sengir", "Azanor", "jeb", "Greymerk", "Dinnerbone", "Grum", "dan200", "Cloudy", "KingLemming", "Zeldo", "AlgorithmX2", "Mikee", "Eyamaz", "kakermix", "cpw", "LexManos", "Vswe", "Direwolf20", "Calclavia", "Reika", "Sangar", "skyboy", "FlowerChild", "SpaceToad", "ChickenBones", "Notch", "Pokefenn", "Shadowclaimer", "Vazkii", "pixlepix", "nekosune", "copygirl", "immibis", "RichardG", "JAKJ", "mDiyo", "pillbox", "progwml6", "PowerCrystals", "GUIpsp", "nallar", "Soaryn", "Soaryn", "AbrarSyed", "Sunstrike", "BevoLJ", "asie", "tterrag", "CrazyPants", "Aidan", "Binnie", "Mojang", "ProfMobius", "peterix", "RWTema", "Slowpoke", "Curse", "bspkrs", "Mr_okushama", "Searge", "iChun", "Krapht", "Erasmus_Crowley", "MysteriousAges", "Drullkus", "Micdoodle8","GenPage","Hunterz","tgame14", "Velotican", "kirindave", "MachineMuse", "M3gaFr3ak", "Lunatrius", "wha-ha-ha", "ga2mer", "vanyserezhkin", "Arkuda63", "omrigan"),
 	"sites" => array("FTB Forums", "MCF", "Reddit", "4chan", "Technic Forums", "IC2 Forums", "GitHub", "BitBucket", "IRC", "ForgeCraft", "Patreon", "BTW Forums", "GregTech thread", "Google+", "Twitch"),
-	"things" => array("ForgeCraft", "Simply Jetpacks", "RedPower 2", "ModLoader", "RedLogic", "Forge MultiPart", "Project: Red", "BuildCraft", "Tinkers' Steelworks", "Artifice", "Roguelike Dungeons", "IndustrialCraft 2", "Equivalent Exchange", "Forestry", "RailCraft", "Simple Jetpacks", "Compact Solars", "ComputerCraft", "Wireless Redstone", "OpenComputers", "GregTech", "Ars Magica", "Thaumcraft", "FTB", "Technic", "Resonant Rise", "MineFactory Reloaded", "Magic Farm 2", "Tekkit", "MCPC+", "ATLauncher", "Metallurgy", "Logistics Pipes", "MCUpdater", "MultiMC", "Curse", "Mojang", "Test Pack Please Ignore", "Agrarian Skies", "Steve's Carts", "Steve's Factory Manager", "BiblioCraft",  "Minecraft", "XyCraft", "Forge", "GregTech", "OpenBlocks", "OpenPeripheral", "OpenComputers", "MFFS", "RotaryCraft", "Big Reactors", "Thermal Expansion 3", "Extra Utilities", "Universal Electricity", "Not Enough Items", "Portal Gun mod", "the Mojang launcher", "Too Many Items", "OptiFine", "Extra Cells", "ExtraBiomesXL", "Biomes O' Plenty", "Better than Wolves", "Schematica", "Tinker's Construct", "Natura", "Hexxit", "Iron Chests", "open-source mods", "closed-source mods", "Not Enough Mods", "Ender IO", "Mekanism", "Minecraft 1.7", "Pixelmon", "Pixelmon", "JABBA", "WAILA", "Opis", "CraftGuide", "Iguana Tweaks", "Tinkers Mechworks", "the Minecraft Drama Generator", "MineChem", "LittleMaidMob", "MCP", "Immibis' Microblocks", "Carpenter's Blocks", "Chisel", "Applied Energistics", "Applied Energistics 2", "Rotatable Blocks", "EnhancedPortals 3", "Ex Nihilo", "Ex Aliquo", "Magic Bees", "BetterStorage", "Backpacks", "Aether II", "Highlands", "Alternate Terrain Generation", "InfiCraft", "Bukkit", "Spigot", "SpoutCraft", "MortTech", "ICBM", "Galacticraft", "Modular Power Suits", "Team CoFH", "Extra Bees", "Extra Trees", "Mo' Creatures", "Grimoire of Gaia", "Atum", "Agriculture", "Sync", "Hats", "Nether Ores"),
+	"things" => array("ForgeCraft", "Simply Jetpacks", "RedPower 2", "ModLoader", "RedLogic", "Forge MultiPart", "Project: Red", "BuildCraft", "Tinkers' Steelworks", "Artifice", "Roguelike Dungeons", "IndustrialCraft 2", "Equivalent Exchange", "Forestry", "RailCraft", "Simple Jetpacks", "Compact Solars", "ComputerCraft", "Wireless Redstone", "OpenComputers", "GregTech", "Ars Magica", "Thaumcraft", "FTB", "Technic", "Resonant Rise", "MineFactory Reloaded", "Magic Farm 2", "Tekkit", "MCPC+", "ATLauncher", "Metallurgy", "Logistics Pipes", "MCUpdater", "MultiMC", "Curse", "Mojang", "Test Pack Please Ignore", "Agrarian Skies", "Steve's Carts", "Steve's Factory Manager", "BiblioCraft",  "Minecraft", "XyCraft", "Forge", "GregTech", "OpenBlocks", "OpenPeripheral", "OpenComputers", "MFFS", "RotaryCraft", "Big Reactors", "Thermal Expansion 3", "Extra Utilities", "Universal Electricity", "Not Enough Items", "Portal Gun mod", "официальный лаунчер", "Too Many Items", "OptiFine", "Extra Cells", "ExtraBiomesXL", "Biomes O' Plenty", "Better than Wolves", "Schematica", "Tinker's Construct", "Natura", "Hexxit", "Iron Chests", "опен-сорс моды", "клозед-сорс моды", "Not Enough Mods", "Ender IO", "Mekanism", "Minecraft 1.7", "Pixelmon", "Pixelmon", "JABBA", "WAILA", "Opis", "CraftGuide", "Iguana Tweaks", "Tinkers Mechworks", "Генератор Майнкрафт Драмы", "MineChem", "LittleMaidMob", "MCP", "Immibis' Microblocks", "Carpenter's Blocks", "Chisel", "Applied Energistics", "Applied Energistics 2", "Rotatable Blocks", "EnhancedPortals 3", "Ex Nihilo", "Ex Aliquo", "Magic Bees", "BetterStorage", "Backpacks", "Aether II", "Highlands", "Alternate Terrain Generation", "InfiCraft", "Bukkit", "Spigot", "SpoutCraft", "MortTech", "ICBM", "Galacticraft", "Modular Power Suits", "Team CoFH", "Extra Bees", "Extra Trees", "Mo' Creatures", "Grimoire of Gaia", "Atum", "Agriculture", "Sync", "Hats", "Nether Ores", "ZoomMod", "bcut"),
 	"packs" => array("Feed The Beast", "the ForgeCraft pack", "FTB Monster", "FTB Unstable", "Agrarian Skies", "Direwolf20 Pack", "Tekkit", "Hexxit", "ATLauncher", "Resonant Rise", "MCUpdater", "Attack of the B-Team", "Mindcrack", "Magic Maiden", "ForgeCraft", "Technic"),
-	"function" => array("MJ support", "RF support", "EU support", "FMP compatibility", "quarries", "automatic mining", "GregTech balance", "ComputerCraft APIs", "OpenComputers APIs", "Bukkit plugin compatibility", "MCPC+ support", "ID allocation", "ore processing", "smelting", "crafting", "balance", "bees", "ThaumCraft integration", "realism", "decorative blocks", "new mobs", "TCon tool parts", "new wood types", "bundled cable support", "new player capes", "more drama", "less drama", "microblocks", "drama generation commands", "Blutricity support", "overpowered items", "underpowered items", "new ores", "better SMP support", "achievements", "quests", "more annoying worldgen"),
-	"adj" => array("bad", "wrong", "illegal", "horrible", "nasty", "not in ForgeCraft", "noncompliant with Mojang's EULA", "a serious problem", "incompatible", "a waste of time", "wonderful", "amazing", "toxic", "too vanilla", "shameful", "disappointing", "bloated", "outdated", "incorrect", "full of drama", "too realistic"),
-	"badsoft" => array("malware", "spyware", "adware", "DRM", "viruses", "trojans", "keyloggers", "stolen code", "easter eggs", "potential login stealers", "adf.ly links", "bad code", "stolen assets", "malicious code", "secret backdoors"),
-	"drama" => array("bugs", "crashes", "drama", "lots of drama", "imbalance", "pain and suffering", "piracy", "bees", "adf.ly"),
-	"crash" => array("crash", "explode", "break", "lag", "blow up", "corrupt chunks", "corrupt worlds", "rain hellfish", "spawn bees"),
-	"ban" => array("ban", "kick", "put a pumpkin of shame on", "add items mocking", "blacklist", "whitelist", "give admin rights to", "shame", "destroy"),
-	"code" => array("code", "assets", "ideas", "concepts", "a single function", "5 lines of code", "a class", "a few files", "a ZIP file", "Gradle buildscripts", "a GitHub repository"),
-	"worse" => array("worse", "better", "faster", "slower", "more stable", "less buggy"),
-	"ac1" => array("sue", "destroy the life of", "flame", "cause drama about", "complain about", "kick"),
-	"price" => array("200$", "250$", "300$", "350$", "400$", "450$", "500$", "600$"),
-	"activates" => array("activates", "works", "functions", "breaks"),
-	"says" => array("says", "tweets", "claims", "confirms", "denies"),
-	"enormous" => array("big", "large", "huge", "gigantic", "enormous")
+	"function" => array("поддержка MJ", "поддержка RF", "поддержка EU", "FMP совместимость", "карьеров", "автоматическая добыча", "GregTech баланс", "ComputerCraft APIs", "OpenComputers APIs", "Bukkit плагин совместимость", "поддержка MCPC+", "распределение ID", "обогатительный", "плавит", "крафт", "баланс", "пчёлы", "интеграция ThaumCraft", "реализм", "декоративные блоки", "новые мобы", "части инструментов TCon", "новые типы дерева", "поддержка bundled кабля", "новые плащи для игроков", "больше драмы", "меньше драмы", "микроблоки", "команды генерации драмы", "поддержку Blutricity", "новые руды", "лучшая поддержка SMP", "достижения", "задания", "больше раздрожительного ворлдгена"),
+	"adj" => array("плохой", "неправильный", "незаконный", "ужасный", "противный", "не в ForgeCraft", "несовместимый с Mojang's EULA", "серьёзные проблемы", "несовместимо", "пустая трата время", "замечательный", "удивительный", "токсичный", "слишком ванильный", "позорный", "разачаровывающий", "раздутый", "устаревший", "неправильный", "полон драмы", "слишком реалистичный"),
+	"badsoft" => array("вредоносный код", "шпионский код", "рекламу", "DRM", "вирусы", "трояны", "кейлоггеры", "украденный код", "пасхальные яйца", "похититель логинов", "adf.ly ссылки", "плохой код", "украденные ресурсы", "вредоносный код", "секретные бэкдоры"),
+	"drama" => array("баги", "краши", "драма", "много драмы", "дисбаланс", "боль и страдания", "пиратство", "пчёлы", "adf.ly"),
+	"crash" => array("краш", "взрывает", "ломает", "лаг", "взорвать", "портит чанки", "ломает миры", "дождь из адских рыб", "спавн пчёл"),
+	"ban" => array("бан", "кикнуть", "добавляет насмешливые предметы", "блеклист", "вайтлист", "даёт админские права", "позор", "уничтожить"),
+	"code" => array("код", "ресурсы", "идеи", "концепты", "одна функция", "5 строк кода", "класс", "несколько файлов", "ZIP-архив", "Gradle билдскрипты", "GitHub репозиторий"),
+	"worse" => array("хуже", "лучше", "быстрее", "медленее", "более стабильный", "меньше ошибок"),
+	"ac1" => array("предьявляет иск", "разрушать жизнь", "пламя", "жаловаться", "кикнул"),
+	"price" => array("7 118 рублей", "8 900 рублей", "10 680 рублей", "12 500 рублей", "14 250 рублей", "16 000 рублей", "18 000 рублей", "21 355 рублей"),
+	"activates" => array("активирует", "работает", "функции", "ломает"),
+	"says" => array("говорит", "твиттит", "подтверждает", "отрицает"),
+	"enormous" => array("большого", "крупного", "огромного", "гигантского", "громадного")
 );
 $sentences = array(
-	"[people] launched a DoS attack on the website of [things]",
-	"[sites] urges everyone to stop using [things]",
-	"After a [enormous] amount of requests, [packs] removes [things]",
-	"After a [enormous] amount of requests, [packs] adds [things]",
-	"After a [enormous] amount of requests, [packs] adds [function] to [things]",
-	"[people] plays [things] on Twitch",
-	"[people] fixes [function] in [things] to be unlike [things]",
-	"[things] makes [things] [crash], [sites] users complain",
-	"[people] complained about being in [things] on [sites]",
-	"[people] releases [code] of [things] for [price]",
-	"[sites] considers [things] worse than [things]",
-	"[people] made [things] depend on [things]",
-	"[people] bans [people] from using [things] in [packs]",
-	"[people] complains that [things] discussion doesn't belong on [sites]",
-	"[people] has a Patreon goal to add [function] to [things] for [price] a month",
-	"[people] has a Patreon goal to add [things] compatibility to [things] for [price] a month",
-	"[people] complains that [people] replaced [things] by [things]",
-	"[people] complains that [people] replaced [things] by [things] in [packs]",
-	"[people] complains that [people] removed [function] in [packs]",
-	"[people] decided that [things] is too [adj] and replaced it with [things]",
-	"[people] [says] [things] is [adj].",
-	"[people] [says] [things] is literally [adj].",
-	"[things] is not updated for the latest version of Minecraft.",
-	"[people] removes [things] from [packs].",
-	"[people] adds [things] to [packs].",
-	"[people] quits modding. Fans of [things] rage.",
-	"[people] is found to secretly like [things]",
-	"[people] openly hates [function] in [things]",
-	"[people] threatens to [ac1] [people] until they remove [things] from [packs]",
-	"[people] threatens to [ac1] [people] until they remove [function] from [things]",
-	"[people] threatens to [ac1] [people] until they add [function] to [things]",
-	"[people] came out in support of [things]",
-	"[people] came out in support of [drama]",
-	"[people] and [people] came out in support of [drama]",
-	"[people] came out against [drama], [sites] rages",
-	"[people] and [people] came out against [drama], [sites] rages",
-	"[people] forks [things] causing [drama]",
-	"[people] [says] to replace [things] with [things]",
-	"[people] [says] [people] causes drama",
-	"[things] fans claim that [things] should be more like [things]",
-	"[things] fans claim that [things] should have better [function]",
-	"[people] [says] that [things] should be more like [things]",
-	"[people] [says] that [things] should be less like [things]",
-	"[people] rebalances [things] for [packs]",
-	"[people] adds [function] to [things] by request of [people]",
-	"[people] removes [function] from [things] by request of [people]",
-	"[people] removes compatibility between [things] and [things] by request of [people]",
-	"[people] [says] [people]'s attitude is [adj]",
-	"[people] [says] [sites]'s attitude is [adj]",
-	"[people] quits the development team of [things]",
-	"[people] [says] [things] is too much like [things]",
-	"[people] [says] [things] is a ripoff of [things]",
-	"[people] [says] [people] stole [code] from [people]",
-	"[people] [says] [people] did not steal [code] from [people]",
-	"[people] decides to [ban] [people] from [packs]",
-	"[things] doesn't work with [things] since the latest update",
-	"[people] sues [things]",
-	"[people] [says] [things] is [adj] on [sites]",
-	"[people] [says] [things] is full of [badsoft]",
-	"[people] [says] [things] causes [drama]",
-	"[people] [says] [things] causes [drama] when used with [things]",
-	"[people] [says] using [things] and [things] together is [adj]",
-	"[people] rants about [things] on [sites]",
-	"[people] rants about [function] in mods on [sites]",
-	"[people] steals code from [things]",
-	"[things] breaks [function]",
-	"[people] sues [things] developers",
-	"[people] reminds you that [things] is [adj]",
-	"[people] and [people] get into a drama fight on [sites]",
-	"Fans of [things] and [things] argue on [sites]",
-	"[people] and [people] argue about [things]",
-	"[people] puts [badsoft] in [things]",
-	"[people] complains about [things] breaking [things]",
-	"[people] complains about [things] breaking [function]",
-	"[people] complains about [things] including [function]",
-	"[things] breaks [function] in [things]",
-	"[things] breaks [things] support in [things]",
-	"[things] adds code to [ban] [people] automatically",
-	"[things] adds code to [ban] people using [things]",
-	"[things] removes compatibility with [things]",
-	"[people] [says] not to use [things]",
-	"[people] [says] not to use [things] with [things]",
-	"[people] finds [badsoft] in [things]",
-	"[people] drew a nasty graffiti about [people]",
-	"[people] drew a nasty graffiti about [things]",
-	"[things] makes [things] [crash] when used with [things]",
-	"[things] makes [things] [crash] when used by [people]",
-	"[things] makes [things] crash [things] when used by [people]",
-	"[things] adds [badsoft] that only [activates] in [packs]",
-	"[things] adds [badsoft] that only [activates] alongside [things]",
-	"[things] makes [people] invincible from [things] in [packs]",
-	"[people] decides to base their entire modpack on [things]",
-	"[people] tweaks balance in [things] too much, annoying [sites]",
-	"[people] tweaks balance in [things] too much, annoying [people]",
-	"[people] [says] [people] is worse than [people]",
-	"[people] [says] [things] is [worse] than [things]",
-	"[people] bans [people] from [sites]"
+	"[people] пустил ДоС атаку на [things]",
+	"[sites] призывает всех, не использовать [things]",
+	"После [enormous] количества запросов, в [packs] убрали [things]",
+	"После [enormous] количества запросов, в [packs] добавили [things]",
+	"После [enormous] количества запросов, в [packs] добавили [function] в [things]",
+	"[people] играет в [things] на Twitch",
+	"[people] жалуются на [things] на [sites]",
+	"[people] реализует [code] в [things] за [price]",
+	"[sites] считает [things] хуже, чем [things]",
+	"[people] сделал [things] зависимым от [things]",
+	"[people] забанил [people] за использование [things] в [packs]",
+	"[people] жалуется, что [things] нету в [sites]",
+	"[people] жалуется, что [people] заменил [things] - [things]",
+	"[people] жалуется, что [people] заменил [things] - [things] в [packs]",
+	"[people] жалуется, что [people] удалил [function] в [packs]",
+	"[people] решил, что [things] тоже [adj] и заменил его [things]",
+	"[people] [says] что [things] это [adj].",
+	"[people] [says] что [things] буквально [adj].",
+	"[things] не обновляется до последней версии Майнкрафт",
+	"[people] удалил [things] из [packs].",
+	"[people] добавил [things] в [packs].",
+	"[people] ушёл из моддинга. Фанаты [things] в ярости.",
+	"[people] тайно нравится [things]",
+	"[people] открыто ненавидит [function] в [things]",
+	"[people] [ac1] [people] пока он не удалит [things] из [packs]",
+	"[people] [ac1] [people] пока он не удалит [function] из [things]",
+	"[people] [ac1] [people] пока он не добавит [function] в [things]",
+	"[people] форкнул [things] потому что [drama]",
+	"[people] [says] замену [things] в [things]",
+	"Фанаты [things] утверждают, что [things] похож на [things]",
+	"Фанаты [things] утверждают, что в [things] лучше [function]",
+	"[people] [says] что [things] должно быть похожим на [things]",
+	"[people] [says] что [things] должно быть не похожим на [things]",
+	"[people] ребалансирует [things] для [packs]",
+	"[people] добавляет [function] в [things] по запросу [people]",
+	"[people] удаляет [function] из [things] по запросу [people]",
+	"[people] удаляет совместимость между [things] и [things] по запросу [people]",
+	"[people] завершает разрабатывать [things]",
+	"[people] [says] [things] слишком много, как [things]",
+	"[people] [says] [people] епитрахиль [code] из [people]",
+	"[people] [says] [people] не крал [code] из [people]",
+	"[people] решает [ban] [people] из [packs]",
+	"[things] не работает вместе с  [things] после последнего обновления",
+	"[people] подал в суд на  [things]",
+	"[people] [says] [things] - [adj] [sites]",
+	"[people] [says] [things] полон [badsoft]",
+	"[people] [says] [things] по причине [drama]",
+	"[people] [says] [things] по причине [drama] с использованием [things]",
+	"[people] [says] использовать [things] и [things] вместе с [adj]",
+	"[people] украл код из [things]",
+	"[things] ломает [function]",
+	"[people] подал в суд на разработчиков [things]",
+	"[people] напоминает вам, что [things] - [adj]",
+	"[people] и [people] вступают в драматический поединок в [sites]",
+	"Фанаты [things] и [things] спорят о [sites]",
+	"[people] и [people] спорят о [things]",
+	"[people] ставит [badsoft] в [things]",
+	"[things] ломает [function] в [things]",
+	"[things] ломает [things] поддержку в [things]",
+	"[things] добавляет [ban] [people] автоматически",
+	"[things] добавляет [ban] человека за использование [things]",
+	"[things] убрал совместимость с [things]",
+	"[people] [says] не использовать [things]",
+	"[people] [says] не использовать [things] с [things]",
+	"[people] находит [badsoft] в [things]",
+	"[things] создаёт [things] [crash] при использовании [things]",
+	"[things] создаёт [things] [crash] когда его использует [people]",
+	"[things] создаёт [things] краш [things] когда его использует [people]",
+	"[things] добавляет [badsoft] который [activates] в [packs]",
+	"[things] добавляет [badsoft] который [activates] рядом с [things]",
+	"[things] делает [people] непобедимым при помощи [things] в [packs]",
+	"[people] делает модпак на основе [things]",
+	"[people] забанил [people] в [sites]",
+	"Упоротый говорит что грег-тех не нужен",
+	"Никитка опять забанил :C",
+	"<img src=http://img-fotki.yandex.ru/get/4400/gogouua.2f/0_52826_ef7f6817_L.jpg>",
+	"<img src=http://img0.joyreactor.cc/pics/post/full/anime-Vocaloid-Hatsune-Miku-631568.png width=50% height=50%>"
 );
 
 function str_replace_first($search, $replace, $subject) {
@@ -172,9 +162,43 @@ echo($s);
 ?>
 <?php if (!isset($_GET["plain"])) : ?>
 </h1>
-<h3><a href="http://asie.pl/drama.php">Give it one more try!</a></h3>
-<h6>Over <?php echo $drama_inc+file_get_contents("/srv/http/drama.txt"); ?> dramas and counting!<br><br>
-Now a Minecraft mod by Mr_okushama! <a href="https://t.co/oc26NfyxKF">1.6.4</a> | <a href="http://t.co/lFTrmuHzVr">1.7.2</a></h6>
+<h3><a href="drama.php">БОЛЬШЕ ДРАМЫ БОГУ ДРАМЫ!</a></h3></div>
+<center><input id="generateImage" type="submit"   value="Заскриншотить"></center>
+<input type="hidden" name="img_val" id="img_val" value="" />
+ <center><input name="linker" id="link" type="hidden" value="ссылка" size="40"><center>
+<script> 
+$(function () {
+    $('#generateImage').click(function () {
+        html2canvas($('#dramaa'), {
+            onrendered: function (canvas) {
+                $('#img_val').val(canvas.toDataURL("image/png"));
+                var str = canvas.toDataURL("image/png");
+					str = str.replace("data:image/png;base64,", "");
+                //console.log(str);
+                    $.ajax({
+                    url: 'https://api.imgur.com/3/image',
+                    type: 'post',
+                    headers: {
+                        Authorization: 'Client-ID 49d74245468a4c7'
+                    },
+                    data: {
+                        image: str
+                    },
+                    dataType: 'json',
+                    success: function (response) {
+                        if (response.success) {
+                            //console.log(response.data.link);
+                            document.getElementsByName("linker")[0].setAttribute('value',response.data.link)
+                            document.getElementsByName("linker")[0].setAttribute('type','text')
+                        }
+                    }
+                });
+            }
+        });
+    });
+});
+</script>
+<!--<h6>Over <?php echo $drama_inc+file_get_contents("/srv/http/drama.txt"); ?> dramas and counting!<br><br> -->
 </body>
 </html>
 <?php endif; ?>
